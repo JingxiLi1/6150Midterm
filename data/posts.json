@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1730536572415,
+    "title": "Test",
+    "body": "Test",
+    "tags": [],
+    "author": "3@gmail.com",
+    "date": "2024-11-02T08:36:12.415Z",
+    "likes": 1
+  },
+  {
+    "id": 1730536602258,
+    "title": "1",
+    "body": "New Post",
+    "tags": [],
+    "author": "3@gmail.com",
+    "date": "2024-11-02T08:36:42.258Z",
+    "likes": 1
+  },
+  {
+    "id": 1730536658499,
+    "title": "2",
+    "body": "New post",
+    "tags": [],
+    "author": "3@gmail.com",
+    "date": "2024-11-02T08:37:38.499Z",
+    "likes": 0
+  }
+]

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <script>
+        async function likePost(postId) {
+            const response = await fetch(`/posts/${postId}/like`, { method: 'POST' });
+            const result = await response.json();
+
+            if (result.success) {
+                document.getElementById(`likes-${postId}`).textContent = `Likes: ${result.likes}`;
+            } else {
+                alert('Failed to like post');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>All Posts</h1>
+    <a href="/posts/new">Create New Post</a>
+
+    <% posts.forEach(post => { %>
+        <div style="margin-top: 20px;">
+            <h2><%= post.title %></h2>
+            <p><%= post.body %></p>
+            <p><strong>Tags:</strong> <%= post.tags.join(', ') %></p>
+            <p><strong>Author:</strong> <%= post.author %> | <strong>Date:</strong> <%= new Date(post.date).toLocaleString() %></p>
+            <p id="likes-<%= post.id %>">Likes: <%= post.likes || 0 %></p>
+            <button onclick="likePost(<%= post.id %>)">Like</button>
+        </div>
+    <% }) %>
+</body>
+</html>
+

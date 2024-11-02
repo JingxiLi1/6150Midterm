@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= post.title %></title>
+</head>
+<body>
+    <h1><%= post.title %></h1>
+    <p><%= post.body %></p>
+    <h2>Comments</h2>
+    <% comments.forEach(comment => { %>
+        <div>
+            <p><%= comment.author %>: <%= comment.content %></p>
+        </div>
+    <% }) %>
+    <h3>Add a comment</h3>
+    <form action="/posts/<%= post.id %>/comments" method="POST">
+        <textarea name="content" required></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
